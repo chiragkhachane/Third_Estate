@@ -9,6 +9,6 @@ __pycache__/
 
 
 # Ignore CSV files, log files, and system files
-*.csv
+#*.csv
 *.log
 .DS_Store
