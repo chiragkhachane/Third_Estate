@@ -30,17 +30,19 @@ The Third_Estate project serves as a structured, modular pipeline for reading, t
 
 The repository is organized as follows:
 
-Third_Estate/
-├── src/
-│ ├── data/
-│ │ ├── raw/ # Contains unprocessed raw data files
-│ │ ├── stage/ # Contains data post initial cleaning
-│ │ └── prod/ # Final cleaned data, ready for production
-│ ├── etl/ # ETL scripts for data loading and transformation
-│ ├── config/ # Configuration files for database connections
-│ └── main.py # Main script to initiate the data pipeline
-├── README.md # Project documentation
-└── .env # Environment variables (excluded from version control)
+    ```bash
+    Third_Estate/
+    ├── src/
+    │ ├── data/
+    │ │ ├── raw/ # Contains unprocessed raw data files
+    │ │ ├── stage/ # Contains data post initial cleaning
+    │ │ └── prod/ # Final cleaned data, ready for production
+    │ ├── etl/ # ETL scripts for data loading and transformation
+    │ ├── config/ # Configuration files for database connections
+    │ └── main.py # Main script to initiate the data pipeline
+    ├── README.md # Project documentation
+    └── .env # Environment variables (excluded from version control)
+    ```
 
 ## Installation
 
@@ -57,39 +59,54 @@ Third_Estate/
    ```bash
    git clone https://github.com/your-username/Third_Estate.git
    cd Third_Estate
-
    ```
 
 2. **Set Up Virtual Environment**:
    Set Up Virtual Environment:
+
+   ```bash
    python3 -m venv venv
    source venv/bin/activate # On Windows: venv\Scripts\activate
+   ```
 
 3. **Install Required Packages**:
    Install the necessary Python packages, including the Snowflake Connector:
+
+   ```bash
    pip install -r requirements.txt
+   ```
+
    If the requirements.txt file is not needed, directly install the Snowflake Connector and any other dependencies:
 
+   ```bash
    pip install snowflake-connector-python
-   Configure Environment Variables: Create a .env file in the root directory and populate it with your Snowflake credentials:
+   ```
+
+   **Configure Environment Variables**:
+
+   Create a .env file in the root directory and populate it with your Snowflake credentials:
    SNOWFLAKE_ACCOUNT=your_account
    SNOWFLAKE_USER=your_username
    SNOWFLAKE_PASSWORD=your_password
    SNOWFLAKE_DATABASE=your_database
    SNOWFLAKE_WAREHOUSE=your_warehouse
 
-   **Set Up Git LFS for Large Files (if necessary)**:
-   git lfs install
-   Usage
+**Set Up Git LFS for Large Files (if necessary)**:
+git lfs install
+Usage
 
 **Data Processing and Enrichment**:
 Run the main pipeline script to process data:
 
+    ```bash
     python src/main.py
+    ```
 
-**Data Upload to Snowflake**: The script data_upload.py within etl/ handles uploading data to Snowflake’s raw, stage, and prod schemas.
+**Data Upload to Snowflake**:
+The script data_upload.py within etl/ handles uploading data to Snowflake’s raw, stage, and prod schemas.
 
-**Configurable Paths**: Update file paths in the script main.py or use environment variables to specify file locations for different stages of the pipeline.
+**Configurable Paths**:
+Update file paths in the script main.py or use environment variables to specify file locations for different stages of the pipeline.
 
 ## Data Pipeline Workflow
 
