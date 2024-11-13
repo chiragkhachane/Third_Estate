@@ -6,7 +6,7 @@ __pycache__/
 *.pyc
 
 # Ignore the data folder and its contents
-#src/data/
+
 
 # Ignore CSV files, log files, and system files
 *.csv
