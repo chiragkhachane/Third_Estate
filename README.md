@@ -11,8 +11,6 @@ This repository contains a data pipeline and analytics application designed to p
 - [Usage](#usage)
 - [Data Pipeline Workflow](#data-pipeline-workflow)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
