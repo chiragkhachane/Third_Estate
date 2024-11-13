@@ -96,9 +96,7 @@ Usage
 **Data Processing and Enrichment**:
 Run the main pipeline script to process data:
 
-    ```bash
     python src/main.py
-    ```
 
 **Data Upload to Snowflake**:
 The script data_upload.py within etl/ handles uploading data to Snowflake’s raw, stage, and prod schemas.
