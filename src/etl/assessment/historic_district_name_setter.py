@@ -18,6 +18,7 @@ def add_historic_district_column(assessment_df, historic_keys_df):
         how='left'
     )
     assessment_df['Historic_District_Name'] = assessment_df['Historic_District_Name'].fillna("UNKNOWN")
+    print(assessment_df)
     return assessment_df
 
 def load_and_process_assessment_data(assessment_filepath, historic_keys_filepath, output_filepath):
