@@ -4,6 +4,7 @@ from etl.violations import violations_cleaner
 from etl.housing_court_cases import housing_court_case_cleaner
 from etl.local_assessment import local_assessmnet_cleaner
 from etl.data_upload import data_upload
+from etl.bank import bank_cleaner
 
 
 def run_assessment_cleaner():
@@ -23,6 +24,9 @@ def run_housing_court_case_cleaner():
 
 def run_local_assessment_cleaner():
     local_assessmnet_cleaner.run_local_assessment_cleaning()
+
+def run_bank_data_cleaning():
+    bank_cleaner.run_bank_data_cleaning()
 
 def run_data_upload_snowflake():
     data_upload.run_data_upload_pipeline()
@@ -49,10 +53,13 @@ def main():
 
     # Step 5: Clean Local_Assessment data
     run_local_assessment_cleaner()
-
-    print("Data cleaning and transformation 100'%' complete.")
     
-    # Step 6: Upload cleaned data to Snowflake
+    # Step 6: Clean Bank Data
+    run_bank_data_cleaning()
+    
+    print("Data cleaning and transformation 100'%' complete.")
+
+    # Step 7: Upload cleaned data to Snowflake
     print("Startig data upload to Snowflake...")
     run_data_upload_snowflake()
 
